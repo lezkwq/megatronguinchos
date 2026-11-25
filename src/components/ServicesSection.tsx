@@ -1,6 +1,6 @@
-import { MessageCircle } from "lucide-react";
 import { COMPANY, SPECIALIZED_SERVICES } from "@/data/megatron";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function ServicesSection() {
   return (
@@ -53,7 +53,7 @@ export function ServicesSection() {
                       rel="noopener noreferrer"
                       className="btn-brand px-5 py-2.5 text-xs uppercase"
                     >
-                      <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                      <WhatsAppIcon className="h-4 w-4" />
                       SOLICITAR NO WHATSAPP
                     </a>
                   </div>

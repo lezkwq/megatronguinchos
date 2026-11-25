@@ -1,7 +1,8 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import ctaTowTruckGarage from "@/assets/cta-tow-truck-garage.jpg";
 import { COMPANY } from "@/data/megatron";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function CtaBannerSection() {
   return (
@@ -25,7 +26,7 @@ export function CtaBannerSection() {
                 rel="noopener noreferrer"
                 className="btn-outline-brand px-6 py-3 text-xs uppercase sm:text-sm"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 SOLICITAR AGORA
               </a>
             </div>
@@ -48,13 +49,10 @@ export function CtaBannerSection() {
               <p className="text-xs font-bold tracking-wider uppercase sm:text-sm">
                 FALE COM A MEGATRON GUINCHOS
               </p>
-              <a
-                href={COMPANY.phoneHref}
-                className="mt-1 inline-flex items-center gap-2 text-2xl font-extrabold tracking-tight text-primary-foreground hover:underline sm:text-3xl"
-              >
+              <p className="mt-1 inline-flex items-center gap-2 text-2xl font-extrabold tracking-tight text-primary-foreground sm:text-3xl">
                 <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
                 {COMPANY.phoneDisplay}
-              </a>
+              </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-2.5 bg-background px-6 py-5 sm:col-span-5 sm:justify-center sm:py-7">
@@ -62,17 +60,10 @@ export function CtaBannerSection() {
                 href={COMPANY.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-surface-black px-5 py-2.5 text-xs font-bold tracking-wider text-secondary-foreground uppercase transition-colors hover:bg-surface-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-surface-black px-6 py-3 text-xs font-bold tracking-wider text-primary uppercase transition-colors hover:bg-surface-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
-                WHATSAPP
-              </a>
-              <a
-                href={COMPANY.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-transparent px-4 py-2.5 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:bg-surface-black hover:text-secondary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-                LIGAR AGORA
+                <WhatsAppIcon className="h-4 w-4" />
+                CHAMAR NO WHATSAPP
               </a>
             </div>
           </div>

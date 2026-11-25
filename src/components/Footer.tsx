@@ -1,6 +1,7 @@
-import { Clock, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
+import { Clock, MapPin, Navigation, Phone } from "lucide-react";
 import { COMPANY } from "@/data/megatron";
 import { MegatronLogo } from "@/components/MegatronLogo";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const FOOTER_LINKS = [
   { label: "Início", href: "#inicio" },
@@ -28,20 +29,13 @@ export function Footer() {
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
-                href={COMPANY.phoneHref}
-                aria-label={`Ligar para ${COMPANY.phoneDisplay}`}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-surface-charcoal text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
                 href={COMPANY.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Conversar pelo WhatsApp"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-surface-charcoal text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
               </a>
               <a
                 href={COMPANY.googleMapsDirectionsUrl}
@@ -80,9 +74,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3.5 text-sm text-secondary-foreground/85">
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <a href={COMPANY.phoneHref} className="font-semibold hover:text-primary">
-                  {COMPANY.phoneDisplay}
-                </a>
+                <span className="font-semibold">{COMPANY.phoneDisplay}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
@@ -101,7 +93,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="btn-brand px-5 py-2.5 text-xs uppercase"
               >
-                <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 WHATSAPP
               </a>
               <a

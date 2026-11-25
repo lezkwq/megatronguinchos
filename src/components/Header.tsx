@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { COMPANY, NAV_ITEMS } from "@/data/megatron";
 import { MegatronLogo } from "@/components/MegatronLogo";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -51,7 +52,7 @@ export function Header() {
             className="btn-brand px-4 py-2 text-xs uppercase"
             aria-label={`Chamar no WhatsApp ${COMPANY.phoneDisplay}`}
           >
-            <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+            <WhatsAppIcon className="h-4 w-4" />
             {COMPANY.phoneDisplay}
           </a>
         </nav>
@@ -98,7 +99,7 @@ export function Header() {
               onClick={() => setMenuOpen(false)}
               className="btn-brand w-full px-4 py-3 text-sm uppercase"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp {COMPANY.phoneDisplay}
             </a>
           </div>
