@@ -30,6 +30,8 @@
  */
 
 @theme inline {
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-display: "Poppins", system-ui, -apple-system, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -70,29 +72,37 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface-black: var(--surface-black);
+  --color-surface-charcoal: var(--surface-charcoal);
+  --color-surface-light: var(--surface-light);
+  --color-primary-hover: var(--primary-hover);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.16 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.16 0 0);
+  --primary: oklch(0.818 0.171 80.5);
+  --primary-hover: oklch(0.755 0.16 80);
+  --primary-foreground: oklch(0.135 0 0);
+  --secondary: oklch(0.268 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.968 0 0);
+  --muted-foreground: oklch(0.568 0 0);
+  --accent: oklch(0.955 0.03 82);
+  --accent-foreground: oklch(0.135 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.91 0 0);
+  --ring: oklch(0.818 0.171 80.5);
+  --surface-black: oklch(0.135 0 0);
+  --surface-charcoal: oklch(0.268 0 0);
+  --surface-light: oklch(0.968 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -145,6 +155,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
   * {
     border-color: var(--color-border);
   }
@@ -152,5 +167,85 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 6px 18px -6px color-mix(in oklab, var(--primary) 55%, transparent);
+  &:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px) scale(1.015);
+    box-shadow: 0 10px 24px -6px color-mix(in oklab, var(--primary) 65%, transparent);
+  }
+  &:active {
+    transform: translateY(0) scale(0.99);
+  }
+}
+
+@utility btn-outline-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease;
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@utility hero-overlay {
+  background: linear-gradient(
+    100deg,
+    oklch(0.11 0 0 / 0.88) 0%,
+    oklch(0.14 0 0 / 0.72) 55%,
+    oklch(0.16 0 0 / 0.48) 100%
+  );
+}
+
+@keyframes hero-subtle-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@utility animate-hero-zoom {
+  animation: hero-subtle-zoom 18s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
