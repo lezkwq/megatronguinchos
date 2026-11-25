@@ -17,17 +17,18 @@ export function AboutSection() {
         <div className="mt-12 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <Reveal className="space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
             <p className="font-medium text-foreground">
-              A Megatron Guinchos oferece serviços de reboque e transporte de veículos em Blumenau,
-              com atendimento 24 horas.
+              Precisando de guincho em Blumenau e região? A Megatron Guinchos trabalha com auto
+              socorro, resgate veicular, guinchos, reboques, transporte de veículos e transporte
+              local de cargas.
             </p>
             <p>
-              Sabemos que precisar de um guincho pode acontecer nos momentos mais inesperados. Por
-              isso, buscamos oferecer um atendimento atencioso, ágil e cuidadoso, proporcionando
-              mais tranquilidade para quem precisa de auxílio.
+              Com atendimento 24 horas, de segunda a segunda, estamos disponíveis para atender sua
+              solicitação nos momentos mais inesperados, buscando oferecer um atendimento atencioso,
+              ágil e cuidadoso.
             </p>
             <p>
               Nosso compromisso é atender cada solicitação com responsabilidade, cuidado no
-              transporte e respeito ao cliente.
+              transporte e respeito ao cliente em Blumenau e região.
             </p>
           </Reveal>
 
@@ -55,7 +56,7 @@ export function AboutSection() {
             <div className="flex flex-col items-center justify-center bg-primary px-6 py-9 text-center text-primary-foreground sm:py-10">
               <span className="text-4xl font-extrabold tracking-tight sm:text-5xl">24 HORAS</span>
               <span className="mt-2 text-xs font-semibold tracking-wider uppercase sm:text-sm">
-                Atendimento disponível 24 horas
+                Atendimento 24 horas • De segunda a segunda
               </span>
             </div>
 

@@ -15,8 +15,10 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@type": "AutomotiveBusiness",
   name: COMPANY.name,
   description:
-    "Serviço de reboque e transporte de veículos em Blumenau com atendimento 24 horas.",
+    "Auto socorro, resgate veicular, guincho e reboque, transporte de veículos e transporte local de cargas em Blumenau e região com atendimento 24 horas, de segunda a segunda.",
   telephone: "+55-47-99176-2721",
+  taxID: COMPANY.cnpj,
+  areaServed: COMPANY.region,
   address: {
     "@type": "PostalAddress",
     streetAddress: "251, Salto Weissbach",
@@ -49,17 +51,20 @@ const LOCAL_BUSINESS_SCHEMA = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Megatron Guinchos | Guincho 24 Horas em Blumenau SC" },
+      { title: "Megatron Guinchos | Guincho 24 Horas, Auto Socorro e Reboque em Blumenau SC" },
       {
         name: "description",
         content:
-          "Precisa de guincho em Blumenau? Entre em contato com a Megatron Guinchos. Atendimento 24 horas para serviços de reboque e transporte. Ligue (47) 99176-2721.",
+          "Precisando de guincho em Blumenau e região? A Megatron Guinchos oferece auto socorro, resgate veicular, guincho, reboque, transporte de veículos e cargas 24 horas, de segunda a segunda. Fale pelo WhatsApp (47) 99176-2721.",
       },
-      { property: "og:title", content: "Megatron Guinchos | Guincho 24 Horas em Blumenau SC" },
+      {
+        property: "og:title",
+        content: "Megatron Guinchos | Guincho 24 Horas, Auto Socorro e Reboque em Blumenau SC",
+      },
       {
         property: "og:description",
         content:
-          "Precisa de guincho em Blumenau? Entre em contato com a Megatron Guinchos. Atendimento 24 horas para serviços de reboque e transporte. Ligue (47) 99176-2721.",
+          "Auto socorro, resgate veicular, guincho e reboque, transporte de veículos e cargas em Blumenau e região. Atendimento 24 horas, de segunda a segunda.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

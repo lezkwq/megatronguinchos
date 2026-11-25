@@ -20,7 +20,11 @@ export function Footer() {
           <div>
             <MegatronLogo size="lg" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-secondary-foreground/75">
-              Atendimento 24 horas. Conte com a Megatron Guinchos quando precisar.
+              Atendimento 24 horas, de segunda a segunda, em Blumenau e região. Conte com a
+              Megatron Guinchos quando precisar.
+            </p>
+            <p className="mt-3 text-xs font-medium text-secondary-foreground/60">
+              CNPJ: {COMPANY.cnpj}
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
@@ -86,16 +90,25 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <span>Funcionamento: 24 horas</span>
+                <span>Funcionamento: 24 horas, de segunda a segunda</span>
               </li>
             </ul>
 
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <a
+                href={COMPANY.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-brand px-5 py-2.5 text-xs uppercase"
+              >
+                <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                WHATSAPP
+              </a>
               <a
                 href={COMPANY.googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-brand px-5 py-2.5 text-xs uppercase"
+                className="btn-outline-brand rounded-full px-5 py-2.5 text-xs uppercase"
               >
                 <Navigation className="h-3.5 w-3.5" aria-hidden="true" />
                 COMO CHEGAR
@@ -107,7 +120,7 @@ export function Footer() {
 
       <div className="border-t border-secondary-foreground/10">
         <div className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-secondary-foreground/60 sm:px-6 lg:px-8">
-          © 2026 Megatron Guinchos. Todos os direitos reservados.
+          © 2026 Megatron Guinchos • CNPJ: {COMPANY.cnpj} • Todos os direitos reservados.
         </div>
       </div>
     </footer>

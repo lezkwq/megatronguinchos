@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import { COMPANY, NAV_ITEMS } from "@/data/megatron";
 import { MegatronLogo } from "@/components/MegatronLogo";
 import { cn } from "@/lib/utils";
@@ -45,11 +45,13 @@ export function Header() {
             </a>
           ))}
           <a
-            href={COMPANY.phoneHref}
+            href={COMPANY.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-brand px-4 py-2 text-xs uppercase"
-            aria-label={`Ligar para ${COMPANY.phoneDisplay}`}
+            aria-label={`Chamar no WhatsApp ${COMPANY.phoneDisplay}`}
           >
-            <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+            <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
             {COMPANY.phoneDisplay}
           </a>
         </nav>
@@ -90,12 +92,14 @@ export function Header() {
           </ul>
           <div className="border-t border-secondary-foreground/10 py-3">
             <a
-              href={COMPANY.phoneHref}
+              href={COMPANY.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="btn-brand w-full px-4 py-3 text-sm uppercase"
             >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              Ligar {COMPANY.phoneDisplay}
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              WhatsApp {COMPANY.phoneDisplay}
             </a>
           </div>
         </nav>

@@ -15,13 +15,17 @@ export function CtaBannerSection() {
             </h2>
             <div className="mt-4 h-1 w-14 bg-primary" aria-hidden="true" />
             <p className="mt-5 text-sm leading-relaxed text-secondary-foreground/85 sm:text-base">
-              Estamos disponíveis 24 horas para atender sua solicitação.
+              Estamos disponíveis 24 horas, de segunda a segunda, em Blumenau e região. Entre em
+              contato pelo WhatsApp!
             </p>
             <div className="mt-8">
               <a
-                href={COMPANY.phoneHref}
+                href={COMPANY.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline-brand px-6 py-3 text-xs uppercase sm:text-sm"
               >
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 SOLICITAR AGORA
               </a>
             </div>
@@ -55,20 +59,20 @@ export function CtaBannerSection() {
 
             <div className="flex flex-wrap items-center gap-2.5 bg-background px-6 py-5 sm:col-span-5 sm:justify-center sm:py-7">
               <a
-                href={COMPANY.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-surface-black px-5 py-2.5 text-xs font-bold tracking-wider text-secondary-foreground uppercase transition-colors hover:bg-surface-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-                LIGAR AGORA
-              </a>
-              <a
                 href={COMPANY.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-transparent px-4 py-2.5 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:bg-surface-black hover:text-secondary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-surface-black px-5 py-2.5 text-xs font-bold tracking-wider text-secondary-foreground uppercase transition-colors hover:bg-surface-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
                 WHATSAPP
+              </a>
+              <a
+                href={COMPANY.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-surface-black bg-transparent px-4 py-2.5 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:bg-surface-black hover:text-secondary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                LIGAR AGORA
               </a>
             </div>
           </div>

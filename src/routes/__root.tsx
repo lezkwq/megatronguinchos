@@ -81,18 +81,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Megatron Guinchos | Guincho 24 Horas em Blumenau SC" },
+      { title: "Megatron Guinchos | Guincho 24 Horas, Auto Socorro e Reboque em Blumenau SC" },
       {
         name: "description",
         content:
-          "Precisa de guincho em Blumenau? Entre em contato com a Megatron Guinchos. Atendimento 24 horas para serviços de reboque e transporte. Ligue (47) 99176-2721.",
+          "Precisando de guincho em Blumenau e região? A Megatron Guinchos oferece auto socorro, resgate veicular, guincho, reboque, transporte de veículos e cargas 24 horas, de segunda a segunda.",
       },
       { name: "author", content: "Megatron Guinchos" },
-      { property: "og:title", content: "Megatron Guinchos | Guincho 24 Horas em Blumenau SC" },
+      {
+        property: "og:title",
+        content: "Megatron Guinchos | Guincho 24 Horas, Auto Socorro e Reboque em Blumenau SC",
+      },
       {
         property: "og:description",
         content:
-          "Precisa de guincho em Blumenau? Entre em contato com a Megatron Guinchos. Atendimento 24 horas para serviços de reboque e transporte. Ligue (47) 99176-2721.",
+          "Precisando de guincho em Blumenau e região? Auto socorro, resgate veicular, guincho, reboque, transporte de veículos e cargas 24 horas, de segunda a segunda.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -108,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
