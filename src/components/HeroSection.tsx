@@ -7,6 +7,7 @@ import {
   Truck,
 } from "lucide-react";
 import megatronHero from "@/assets/megatron-hero.jpg";
+import megatronHeroMobile from "@/assets/megatron-hero-mobile.jpg";
 import { COMPANY, HERO_SERVICES } from "@/data/megatron";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -22,37 +23,43 @@ export function HeroSection() {
   return (
     <>
       <section id="inicio" className="w-full overflow-hidden bg-surface-black">
-        <div className="grid min-h-[560px] grid-cols-1 lg:grid-cols-10">
-          {/* Left ~70%: Dark hero area with headline + real 9:16 vertical truck showcase */}
-          <div className="relative flex items-center overflow-hidden bg-surface-black lg:col-span-7">
+        <div className="grid min-h-[540px] grid-cols-1 lg:grid-cols-10">
+          {/* Left ~70%: Full-bleed tow truck photography (horizontal on desktop, 9:16 vertical on mobile) + dark overlay + headline */}
+          <div className="relative flex min-h-[520px] items-center lg:col-span-7">
+            <img
+              src={megatronHeroMobile}
+              alt="Caminhão guincho plataforma da Megatron Guinchos transportando automóvel em Blumenau"
+              fetchPriority="high"
+              className="animate-hero-zoom absolute inset-0 h-full w-full object-cover object-center md:hidden"
+            />
             <img
               src={megatronHero}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-md"
+              alt="Caminhão guincho plataforma da Megatron Guinchos transportando automóvel em Blumenau"
+              fetchPriority="high"
+              className="animate-hero-zoom absolute inset-0 hidden h-full w-full object-cover object-[58%_55%] md:block"
             />
             <div className="hero-overlay absolute inset-0" aria-hidden="true" />
 
-            <div className="relative z-10 grid w-full grid-cols-1 items-center gap-8 px-6 py-12 sm:px-10 md:grid-cols-12 md:py-16 lg:px-12 xl:px-16">
-              <div className="md:col-span-7">
+            <div className="relative z-10 w-full px-6 py-16 sm:px-10 md:py-24 lg:px-14 xl:px-20">
+              <div className="max-w-2xl">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface-black/65 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-primary uppercase backdrop-blur-xs">
                   <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
                   Atendimento 24 horas • De segunda a segunda
                 </div>
 
                 <div className="border-l-4 border-primary pl-4 sm:pl-5">
-                  <h1 className="text-3xl font-extrabold tracking-tight text-secondary-foreground sm:text-4xl xl:text-[2.85rem] xl:leading-[1.12]">
+                  <h1 className="text-3xl font-extrabold tracking-tight text-secondary-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
                     GUINCHO 24 HORAS EM BLUMENAU E REGIÃO
                   </h1>
                 </div>
 
-                <p className="mt-5 max-w-xl text-sm leading-relaxed text-secondary-foreground/90 sm:text-base">
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-secondary-foreground/90 sm:text-lg">
                   Precisando de guincho em Blumenau e região? Trabalhamos com auto socorro,
                   resgate, guinchos, reboques e transporte de veículos, 24 horas, de segunda a
                   segunda.
                 </p>
 
-                <div className="mt-7 flex flex-wrap items-center gap-3.5">
+                <div className="mt-8 flex flex-wrap items-center gap-3.5">
                   <a
                     href={COMPANY.whatsappHref}
                     target="_blank"
@@ -68,18 +75,6 @@ export function HeroSection() {
                   <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                   <span>{COMPANY.addressShort}</span>
                 </p>
-              </div>
-
-              {/* Real 9:16 vertical photograph preserved in native aspect ratio */}
-              <div className="flex justify-center md:col-span-5 md:justify-end">
-                <div className="aspect-[9/16] w-full max-w-[270px] overflow-hidden rounded-lg border-2 border-primary/50 bg-surface-black shadow-2xl sm:max-w-[290px] md:max-w-[250px] xl:max-w-[280px]">
-                  <img
-                    src={megatronHero}
-                    alt="Caminhão guincho plataforma real da Megatron Guinchos transportando veículo em Blumenau"
-                    fetchPriority="high"
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
               </div>
             </div>
           </div>
